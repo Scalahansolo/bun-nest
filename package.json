@@ -1,0 +1,12 @@
+{
+  "name": "bun-nest",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "dependencies": {
+    "typescript": "^5.2.2"
+  }
+}
