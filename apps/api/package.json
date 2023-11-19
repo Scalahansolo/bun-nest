@@ -12,6 +12,9 @@
     "reflect-metadata": "0.1.13",
     "rxjs": "7.8.1"
   },
+  "peerDependencies": {
+
+  },
   "devDependencies": {
     "@types/node": "20.9.2"
   }
