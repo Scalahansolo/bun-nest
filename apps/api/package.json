@@ -2,7 +2,7 @@
   "name": "api",
   "scripts": {
     "dev": "bun run src/main.ts",
-    "build": "bun build ./src/main.ts --outdir ./build --target node"
+    "build": "bun build.ts"
   },
   "dependencies": {
     "@nestjs/common": "10.2.9",
