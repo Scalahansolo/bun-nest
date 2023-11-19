@@ -35,6 +35,9 @@
     "paths": {
       "@oasis/nest": [
         "./packages/nest/src"
+      ],
+      "@oasis/utils": [
+        "./packages/utils/src"
       ]
     }
   }
