@@ -5,6 +5,10 @@
     ".": {
       "bun": "./src/index.ts",
       "types": "./src/index.ts"
+    },
+    "./inner": {
+      "bun": "./src/inner/index.ts",
+      "types": "./src/inner/index.ts"
     }
   }
 }
