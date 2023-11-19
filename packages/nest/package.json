@@ -1,0 +1,18 @@
+{
+  "name": "@oasis/nest",
+  "exports": {
+    ".": {
+      "bun": "./src/index.ts",
+      "types": "./src/index.ts"
+    }
+  },
+  "dependencies": {
+    "@nestjs/common": "10.2.9",
+    "@nestjs/core": "^10.2.9",
+    "@nestjs/platform-express": "10.2.9",
+    "@oasis/utils": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "20.9.2"
+  }
+}

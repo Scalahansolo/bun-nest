@@ -8,6 +8,10 @@ var __legacyDecorateClassTS = function(decorators, target, key, desc) {
         r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
   return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __legacyMetadataTS = (k, v) => {
+  if (typeof Reflect === "object" && typeof Reflect.metadata === "function")
+    return Reflect.metadata(k, v);
+};
 
 // src/main.ts
 import {NestFactory} from "@nestjs/core";
@@ -17,33 +21,47 @@ import {Module} from "@nestjs/common";
 
 // src/app.controller.ts
 import {Controller, Get} from "@nestjs/common";
-import {hello} from "@oasis/utils";
 import {innerHello} from "@oasis/utils/inner";
+import {PackagesService} from "@oasis/nest";
 class AppController {
+  packageService;
+  constructor(packageService) {
+    this.packageService = packageService;
+  }
   getHello() {
-    console.log("hello from api!");
-    return hello();
+    return this.packageService.getHello();
   }
   getInnerHello() {
     return innerHello();
   }
 }
 __legacyDecorateClassTS([
-  Get()
+  Get(),
+  __legacyMetadataTS("design:type", Function),
+  __legacyMetadataTS("design:paramtypes", []),
+  __legacyMetadataTS("design:returntype", String)
 ], AppController.prototype, "getHello", null);
 __legacyDecorateClassTS([
-  Get("inner")
+  Get("inner"),
+  __legacyMetadataTS("design:type", Function),
+  __legacyMetadataTS("design:paramtypes", []),
+  __legacyMetadataTS("design:returntype", String)
 ], AppController.prototype, "getInnerHello", null);
 AppController = __legacyDecorateClassTS([
-  Controller("api")
+  Controller("api"),
+  __legacyMetadataTS("design:paramtypes", [
+    typeof PackagesService === "undefined" ? Object : PackagesService
+  ])
 ], AppController);
 
 // src/app.module.ts
+import {PackageModule} from "@oasis/nest";
 class AppModule {
 }
 AppModule = __legacyDecorateClassTS([
   Module({
-    controllers: [AppController]
+    controllers: [AppController],
+    imports: [PackageModule]
   })
 ], AppModule);
 

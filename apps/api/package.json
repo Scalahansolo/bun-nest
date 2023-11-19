@@ -1,7 +1,7 @@
 {
   "name": "api",
   "scripts": {
-    "dev": "bun run src/main.ts",
+    "dev": "bun run --watch src/main.ts",
     "build": "bun build.ts"
   },
   "dependencies": {
@@ -9,6 +9,7 @@
     "@nestjs/core": "^10.2.9",
     "@nestjs/platform-express": "10.2.9",
     "@oasis/utils": "workspace:*",
+    "@oasis/nest": "workspace:*",
     "reflect-metadata": "0.1.13",
     "rxjs": "7.8.1"
   },
